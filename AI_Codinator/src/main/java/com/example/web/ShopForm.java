@@ -12,6 +12,9 @@ public class ShopForm {
     private String itemName;
 }
 
+// ----------------------------
+// 検索結果フォームクラス
+// ----------------------------
 @Data
 class ShopForm_Result {
    @NotNull
