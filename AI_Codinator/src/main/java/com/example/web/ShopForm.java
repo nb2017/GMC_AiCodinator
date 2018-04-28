@@ -11,3 +11,12 @@ public class ShopForm {
     @Size(min = 1, max = 127)
     private String itemName;
 }
+
+@Data
+class ShopForm_Result {
+   @NotNull
+    @Size(min = 1, max = 127)
+    private String itemName;
+   private String imgPath;
+}
+
