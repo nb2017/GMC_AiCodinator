@@ -33,6 +33,7 @@ public class Aicodinator_Shop {
         return new ShopForm();
     }
 */
+    // 4/29 構造から見直す方針
     @GetMapping
     String list(Model model) {
 //        List<ProductItem> productItems = shopService.findAll();
