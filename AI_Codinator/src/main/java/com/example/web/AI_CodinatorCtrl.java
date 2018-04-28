@@ -23,7 +23,6 @@ import java.util.List;
 public class AI_CodinatorCtrl {
     @Autowired
     ShopService shopService;
-//    CustomerService customerService;
 
     @ModelAttribute
     ShopForm setUpForm() {
@@ -35,8 +34,6 @@ public class AI_CodinatorCtrl {
 	 // ------------------------------------
     @GetMapping
     String list(Model model) {
-//        List<Customer> customers = customerService.findAll();
-//        model.addAttribute("customers", customers);
         return "ai_codinator/main";
     }
     
@@ -48,10 +45,6 @@ public class AI_CodinatorCtrl {
         if (result.hasErrors()) {
             return list(model);
         }
-//        List<ProductItem> items = shopService.findAll();
-//        BeanUtils.copyProperties(form, item);
-//        customerService.create(customer);
-//        model.addAttribute("results", items);
         return "ai_codinator/result";
     }    
 /*
