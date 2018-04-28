@@ -23,6 +23,9 @@ public class CustomerController {
         return new CustomerForm();
     }
 
+    // --------------------------------------------------------------------
+    // ユーザ管理ページ 初回リダイレクト
+    // --------------------------------------------------------------------
     @GetMapping
     String list(Model model) {
         List<Customer> customers = customerService.findAll();
