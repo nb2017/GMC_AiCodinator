@@ -9,10 +9,12 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface CustomerRepository extends JpaRepository<Customer, Integer> {
-    @Query("SELECT x FROM Customer x ORDER BY x.firstName, x.lastName")
+    // パスワード項追加に伴う変更 20180429
+    @Query("SELECT x FROM Customer x ORDER BY x.firstName, x.lastName, x.passWord")
     List<Customer> findAllOrderByName();
 
-    @Query("SELECT x FROM Customer x ORDER BY x.firstName, x.lastName")
+    // パスワード項追加に伴う変更 20180429
+    @Query("SELECT x FROM Customer x ORDER BY x.firstName, x.passWord")
     Page<Customer> findAllOrderByName(Pageable pageable);
 }
 

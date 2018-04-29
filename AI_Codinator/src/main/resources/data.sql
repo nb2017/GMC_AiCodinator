@@ -1,7 +1,7 @@
-INSERT INTO customers(first_name, last_name) VALUES('Nobita', 'Nobi');
-INSERT INTO customers(first_name, last_name) VALUES('Takeshi', 'Goda');
-INSERT INTO customers(first_name, last_name) VALUES('Suneo', 'Honekawa');
-INSERT INTO customers(first_name, last_name) VALUES('Shizuka', 'Minamoto');
+INSERT INTO customers(first_name, last_name, pass_word) VALUES('Nobita', 'Nobi', '1111');
+INSERT INTO customers(first_name, last_name, pass_word) VALUES('Takeshi', 'Goda', '1111');
+INSERT INTO customers(first_name, last_name, pass_word) VALUES('Suneo', 'Honekawa', '1111');
+INSERT INTO customers(first_name, last_name, pass_word) VALUES('Shizuka', 'Minamoto', '1111');
 
 create table ProductItems (
     id INT PRIMARY KEY AUTO_INCREMENT,

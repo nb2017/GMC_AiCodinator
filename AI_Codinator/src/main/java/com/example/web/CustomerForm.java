@@ -13,4 +13,10 @@ public class CustomerForm {
     @NotNull
     @Size(min = 1, max = 127)
     private String lastName;
+    // ----------------------------
+    // パスワード項追加
+    // ----------------------------
+    @NotNull
+    @Size(min = 1, max = 127)
+    private String passWord;
 }
