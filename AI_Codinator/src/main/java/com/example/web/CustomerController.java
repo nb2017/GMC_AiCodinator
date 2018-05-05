@@ -53,9 +53,9 @@ public class CustomerController {
 
     @PostMapping(path = "edit")
     String edit(@RequestParam Integer id, @Validated CustomerForm form, BindingResult result) {
-        if (result.hasErrors()) {
-            return editForm(id, form);
-        }
+       if (result.hasErrors()) {
+           return editForm(id, form);
+       }
         Customer customer = new Customer();
         BeanUtils.copyProperties(form, customer);
         customer.setId(id);

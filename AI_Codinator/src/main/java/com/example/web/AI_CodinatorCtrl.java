@@ -42,8 +42,17 @@ public class AI_CodinatorCtrl {
 	 // ------------------------------------
     @PostMapping(path = "find")
     String find(@Validated ShopForm form, BindingResult result, Model model) {
-        if (result.hasErrors()) {
-            return list(model);
+        // if (result.hasErrors()) {
+        //     return list(model);
+        // }
+        List<ProductItem> items = shopService.findAll();
+        for ( int ii = 0 ; ii < items.size() ; ++ii )
+        {
+            if ( items.get(ii).getItemName().equalsIgnoreCase(form.getItemName()) )
+            {
+                form.setImgPath(items.get(ii).getImgPath());
+                break;
+            }
         }
         return "ai_codinator/result";
     }    

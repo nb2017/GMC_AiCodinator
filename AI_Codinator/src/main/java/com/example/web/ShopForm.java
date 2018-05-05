@@ -10,6 +10,8 @@ public class ShopForm {
    @NotNull
     @Size(min = 1, max = 127)
     private String itemName;
+    @Size(min = 1, max = 256)
+    private String imgPath;
 }
 
 // ----------------------------
