@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RequestMapping("customers")
+@RequestMapping("system")
 public class CustomerController {
     @Autowired
     CustomerService customerService;
@@ -30,7 +30,7 @@ public class CustomerController {
     String list(Model model) {
         List<Customer> customers = customerService.findAll();
         model.addAttribute("customers", customers);
-        return "customers/list";
+        return "system/list";
     }
 
     @PostMapping(path = "create")
@@ -41,14 +41,14 @@ public class CustomerController {
         Customer customer = new Customer();
         BeanUtils.copyProperties(form, customer);
         customerService.create(customer);
-        return "redirect:/customers";
+        return "redirect:/system";
     }
 
     @GetMapping(path = "edit", params = "form")
     String editForm(@RequestParam Integer id, CustomerForm form) {
         Customer customer = customerService.findOne(id);
         BeanUtils.copyProperties(customer, form);
-        return "customers/edit";
+        return "system/edit";
     }
 
     @PostMapping(path = "edit")
@@ -60,17 +60,17 @@ public class CustomerController {
         BeanUtils.copyProperties(form, customer);
         customer.setId(id);
         customerService.update(customer);
-        return "redirect:/customers";
+        return "redirect:/system";
     }
 
     @GetMapping(path = "edit", params = "goToTop")
     String goToTop() {
-        return "redirect:/customers";
+        return "redirect:/system";
     }
 
     @PostMapping(path = "delete")
     String delete(@RequestParam Integer id) {
         customerService.delete(id);
-        return "redirect:/customers";
+        return "redirect:/system";
     }
 }

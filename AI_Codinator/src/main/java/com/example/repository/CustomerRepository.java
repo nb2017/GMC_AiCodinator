@@ -14,7 +14,7 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer> {
     List<Customer> findAllOrderByName();
 
     // パスワード項追加に伴う変更 20180429
-    @Query("SELECT x FROM Customer x ORDER BY x.firstName, x.passWord")
+    @Query("SELECT x FROM Customer x ORDER BY x.firstName, x.lastName, x.passWord")
     Page<Customer> findAllOrderByName(Pageable pageable);
 }
 

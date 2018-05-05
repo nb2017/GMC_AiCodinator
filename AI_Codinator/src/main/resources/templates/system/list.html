@@ -14,7 +14,7 @@
     <h1>AIコーディネーターシステム管理画面</h1>
 
     <div class="col-sm-12">
-        <form th:action="@{/customers/create}" th:object="${customerForm}" class="form-horizontal" method="post">
+        <form th:action="@{/system/create}" th:object="${customerForm}" class="form-horizontal" method="post">
             <fieldset>
                 <legend>顧客情報作成</legend>
                 <div class="form-group" th:classappend="${#fields.hasErrors('lastName')}? 'has-error has-feedback'">
@@ -69,13 +69,13 @@
                 <td th:text="${customer.firstName}">太郎</td>
                 <td th:text="${customer.passWord}">*****</td>
                 <td>
-                    <form th:action="@{/customers/edit}" method="get">
+                    <form th:action="@{/system/edit}" method="get">
                         <input class="btn btn-default" type="submit" name="form" value="編集"/>
                         <input type="hidden" name="id" th:value="${customer.id}"/>
                     </form>
                 </td>
                 <td>
-                    <form th:action="@{/customers/delete}" method="post">
+                    <form th:action="@{/system/delete}" method="post">
                         <input class="btn btn-danger" type="submit" value="削除"/>
                         <input type="hidden" name="id" th:value="${customer.id}"/>
                     </form>

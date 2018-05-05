@@ -13,7 +13,7 @@
     <h1>AIコーディネーター検索結果</h1>
 
     <div class="col-sm-12">
-        <form th:action="@{/ai_codinator/find}" th:object="${shopForm}" class="form-horizontal" method="post">
+        <form th:action="@{/ai_codinator/find}" th:object="${shopForm}" class="form-horizontal" method="get">
             <fieldset>
                 <legend>商品検索</legend>
                 <div class="form-group" th:classappend="${#fields.hasErrors('itemName')}? 'has-error has-feedback'">

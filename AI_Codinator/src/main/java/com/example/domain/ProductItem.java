@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "ProductItems")
+@Table(name = "PItems")
 public class ProductItem {
     @Id
     @GeneratedValue
