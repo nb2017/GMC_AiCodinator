@@ -33,11 +33,20 @@
                 </div>
             </fieldset>
         </form>
+
+        <table class="table table-striped table-bordered table-condensed">
+            <tr>
+                <th>商品名</th>
+                <th>商品イメージ</th>
+            </tr>
+            <td th:text="${shopForm.itemName}">商品</td>
+            <td >
+                <img th:src="${shopForm.imgPath}"  class="pic" alt=""></img>
+            </td>
+        </table>        
         <hr/>
     </div>
 
-    <h2>お探しの商品は見つかりませんでした</h2>
-    
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"
         th:src="@{/webjars/jquery/1.11.1/jquery.min.js}"></script>

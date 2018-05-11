@@ -41,18 +41,12 @@ public class AI_CodinatorCtrl {
 	 // 検索ボタンアクション
 	 // ------------------------------------
     @GetMapping(path = "find", params = "itemName")
-//    @PostMapping(path = "find")
     String find(@RequestParam String itemName, ShopForm form) {
-//    String find(@Validated ShopForm form, BindingResult result, Model model) {
-        // if (result.hasErrors()) {
-        //     return list(model);
-        // }
         List<ProductItem> items = shopService.findAll();
         int idxSize = items.size();
         for ( int ii = 0 ; ii < items.size() ; ++ii )
         {
             if ( items.get(ii).getItemName().equalsIgnoreCase(itemName) )
-//            if ( items.get(ii).getItemName().equalsIgnoreCase(form.getItemName()) )
             {
                 form.setImgPath(items.get(ii).getImgPath());
                 break;
