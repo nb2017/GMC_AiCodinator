@@ -1,16 +1,11 @@
 package com.example.web;
 
-import com.example.domain.Customer;
 import com.example.domain.ProductItem;
-import com.example.service.CustomerService;
 import com.example.service.ShopService;
 
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -44,7 +39,7 @@ public class AI_CodinatorCtrl {
     String find(@RequestParam String itemName, ShopForm form) {
         List<ProductItem> items = shopService.findAll();
         int idxSize = items.size();
-        for ( int ii = 0 ; ii < items.size() ; ++ii )
+        for ( int ii = 0 ; ii < idxSize ; ++ii )
         {
             if ( items.get(ii).getItemName().equalsIgnoreCase(itemName) )
             {
