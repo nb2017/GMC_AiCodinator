@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface CustomerRepository extends JpaRepository<SpeechData, Integer> {
+public interface SpeechDataRepository extends JpaRepository<SpeechData, Integer> {
     // パスワード項追加に伴う変更 20180429
     @Query("SELECT x FROM SpeechData x")
     List<SpeechData> findAllOrderByName();
