@@ -18,12 +18,6 @@ public class Aicodinator_Shop {
 	// 商品情報を持つクラス
     @Autowired
     ShopService shopService;
-/*
-    @ModelAttribute
-    ShopForm setUpForm() {
-        return new ShopForm();
-    }
-*/
     // 4/29 構造から見直す方針
     @GetMapping
     String list(Model model) {
@@ -31,21 +25,4 @@ public class Aicodinator_Shop {
         //model.addAttribute("productItems", productItems);
         return "shop/main";
     }
-
-    /*
-    @PostMapping(path = "find")
-    String find(@Validated ShopForm form, BindingResult result, Model model) {
-        if (result.hasErrors()) {
-            return list(model);
-        }
-        return "shop/item";
-    }
-    */
-
-    /*
-    @GetMapping(path = "edit", params = "goToTop")
-    String goToTop() {
-        return "redirect:/shop";
-    }
-    */
 }

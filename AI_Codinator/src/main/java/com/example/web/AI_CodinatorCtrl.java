@@ -37,57 +37,20 @@ public class AI_CodinatorCtrl {
 	 // ------------------------------------
     @GetMapping(path = "find", params = "itemName")
     String find(@RequestParam String itemName, ShopForm form) {
+        // 商品情報取得
         List<ProductItem> items = shopService.findAll();
+        // 商品情報数取得
         int idxSize = items.size();
         for ( int ii = 0 ; ii < idxSize ; ++ii )
         {
+            // キーワードの商品名と一致 ?
             if ( items.get(ii).getItemName().equalsIgnoreCase(itemName) )
             {
+                // 商品画像パスをフォームにセット           ←なんか違う気がする
                 form.setImgPath(items.get(ii).getImgPath());
                 break;
             }
         }
         return "ai_codinator/result";
     }
-    
-/*
-    @PostMapping(path = "create")
-    String create(@Validated CustomerForm form, BindingResult result, Model model) {
-        if (result.hasErrors()) {
-            return list(model);
-        }
-        Customer customer = new Customer();
-        BeanUtils.copyProperties(form, customer);
-        customerService.create(customer);
-        return "redirect:/ai_codinator";
-    }
-
-    @GetMapping(path = "edit", params = "form")
-    String editForm(@RequestParam Integer id, CustomerForm form) {
-        Customer customer = customerService.findOne(id);
-        BeanUtils.copyProperties(customer, form);
-        return "ai_codinator/main";
-    }
-
-    @PostMapping(path = "edit")
-    String edit(@RequestParam Integer id, @Validated CustomerForm form, BindingResult result) {
-        if (result.hasErrors()) {
-            return editForm(id, form);
-        }
-        Customer customer = new Customer();
-        BeanUtils.copyProperties(form, customer);
-        customer.setId(id);
-        customerService.update(customer);
-        return "redirect:/ai_codinator";
-    }
-    @GetMapping(path = "edit", params = "goToTop")
-    String goToTop() {
-        return "redirect:/ai_codinator";
-    }
-    @PostMapping(path = "delete")
-    String delete(@RequestParam Integer id) {
-        customerService.delete(id);
-        return "redirect:/ai_codinator";
-    }
-  */
 }
