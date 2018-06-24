@@ -4,22 +4,22 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.lang.reflect.Array;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.sql.rowset.serial.SerialArray;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "custom")
-public class Customer {
+@Table(name = "speechDataTbl")
+public class SpeechData {
     @Id
     @GeneratedValue
     private Integer id;
-    private String firstName;
-    private String lastName;
-    // パスワード項追加
-    private String passWord;
+    private Integer voice;
 }
