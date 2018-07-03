@@ -6,12 +6,12 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Debug (Launch)-AiCodinatorApplication<ai_codinator>",
+            "name": "Debug (Launch)-VoiceDataRecognition<VoiceDataRecognition>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
             "console": "internalConsole",
             "stopOnEntry": false,
-            "mainClass": "com.example.AiCodinatorApplication",
+            "mainClass": "com.example.VoiceDataRecognitionApplication",
             "projectName": "ai_codinator",
             "args": ""
         },
