@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class VoiceDataRecognitionApplication {
 
 	@GetMapping("/")
-	string home()
+	String home()
 	{
 
 
